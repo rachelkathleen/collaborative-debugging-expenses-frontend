@@ -1,4 +1,4 @@
-export const addAccount = (data) => {
+export const addAccount = (data, history) => {
 
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/accounts', {
@@ -10,7 +10,10 @@ export const addAccount = (data) => {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(account => dispatch({type: 'ADD_ACCOUNT', payload: account}))
+    .then(account => {
+      dispatch({type: 'ADD_ACCOUNT', payload: account})
+      history.push(`/accounts/${account.id}`)
+    })
   }
 
 }
