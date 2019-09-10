@@ -12,7 +12,7 @@ export const addTransaction = (data, accountId, history) => {
     })
     .then(response => response.json())
     .then(account => {
-      dispatch({type: 'ADD_TRANSACTION', payload: account})
+      dispatch({type: 'ADD_TRANSACTIO', payload: account})
       history.push(`/accounts/${accountId}`)
     })
   }

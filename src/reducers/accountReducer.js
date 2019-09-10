@@ -10,18 +10,20 @@ export default function accountReducer(state = {accounts: [], totalBalance: ''},
 
         state.accounts.map(a => total += a.balance)
         total += action.payload.balance
+        
       return {...state, accounts: [...state.accounts, action.payload], totalBalance: total}
-      case 'ADD_TRANSACTION':
+    case 'ADD_TRANSACTION':
 
-          state.accounts.map(a => a.id != action.payload.id ? total += a.balance : 0)
-          total += action.payload.balance
-        return  {...state, totalBalance: total, accounts: state.accounts.map(account => {
-          if (account.id === action.payload.id ) {
-            return action.payload
-          } else {
-            return account
-          }
-        })}
+        state.accounts.map(a => a.id != action.payload.id ? total += a.balance : 0)
+        total += action.payload.balance
+
+      return  {...state, totalBalance: total, accounts: state.accounts.map(account => {
+        if (account.id === action.payload.id ) {
+          return action.payload
+        } else {
+          return account
+        }
+      })}
     default:
       return state
   }
