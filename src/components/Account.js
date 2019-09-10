@@ -17,7 +17,7 @@ const Account = (props) => {
         </div>
       )
     } else {
-        return null
+        return <Redirect to='/accounts'/>
     }
   }
 
