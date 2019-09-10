@@ -19,7 +19,7 @@ class AccountsContainer extends React.Component {
             <span style={{display: 'inline', float: 'right'}}>Total Balance: ${this.props.totalBalance}</span>
             <Switch>
                 <Route path='/accounts/new' component={AccountInput}/>
-                <Route path='/accounts/:id' component={Account}/>
+                <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>}/>
                 <Route exact path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>}/>
             </Switch>
           </span>
