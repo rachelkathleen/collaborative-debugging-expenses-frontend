@@ -12,7 +12,7 @@ class TransactionContainer extends React.Component {
       return (
         <div>
           <Route path="/accounts/:id/transactions/new" render={(rProps) => <TransactionInput history={this.props.history} account={this.props.account}/>}/>
-          <Link to={`/accounts/${this.props.account.id}/transactions/new`}>New Transaction</Link>
+          {this.props.urlMatch.isExact ? <Link to={`/accounts/${this.props.account.id}/transactions/new`}>New Transaction</Link> : null}
           {this.props.urlMatch.isExact ? <Transactions transactions={this.props.account.transactions}/>: null}
         </div>
       )
