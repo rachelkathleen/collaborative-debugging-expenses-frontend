@@ -6,7 +6,7 @@ const Account = (props) => {
 
   console.log(props.accounts)
 
-  let account = props.accounts.find(a => a.id == props.match.params.id)
+  let account = props.accounts && props.accounts.find(a => a.id == props.match.params.id)
 
   const renderAccount = () => {
     if (account ) {
