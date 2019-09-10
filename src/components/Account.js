@@ -4,7 +4,6 @@ import TransactionContainer from '../containers/TransactionContainer'
 
 const Account = (props) => {
 
-  console.log(props.accounts)
 
   let account = props.accounts.find(a => a.id == props.match.params.id)
 
@@ -21,7 +20,9 @@ const Account = (props) => {
     }
   }
 
+
   return (
+
     <div>
       {props.match.isExact && renderAccount()}
       <TransactionContainer account={account} history={props.history} urlMatch={props.match}/>

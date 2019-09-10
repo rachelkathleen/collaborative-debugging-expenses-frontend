@@ -8,7 +8,6 @@ import Transactions from '../components/Transactions'
 class TransactionContainer extends React.Component {
 
   renderRoutes = () => {
-    if (this.props.account) {
       return (
         <div>
           <Route path="/accounts/:id/transactions/new" render={(rProps) => <TransactionInput history={this.props.history} account={this.props.account}/>}/>
@@ -16,10 +15,6 @@ class TransactionContainer extends React.Component {
           {this.props.urlMatch.isExact ? <Transactions transactions={this.props.account.transactions}/>: null}
         </div>
       )
-    } else {
-      return null
-    }
-
   }
 
   render() {
