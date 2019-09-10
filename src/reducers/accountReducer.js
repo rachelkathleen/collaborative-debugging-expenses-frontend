@@ -1,5 +1,5 @@
 
-export default function accountReducer(state = {totalBalance: ''}, action) {
+export default function accountReducer(state = {accounts: [], totalBalance: ''}, action) {
       let total = 0
   switch (action.type) {
     case 'FETCH_ACCOUNTS':
