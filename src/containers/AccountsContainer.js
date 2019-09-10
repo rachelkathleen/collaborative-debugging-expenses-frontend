@@ -35,5 +35,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchAccounts})(AccountsContainer)
-
-// <Route path='/accounts/:id' render={(rProps) => <Account {...rProps} accounts={this.props.accounts}/>}/>
